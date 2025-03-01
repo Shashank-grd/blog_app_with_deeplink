@@ -43,24 +43,19 @@ class _BlogListScreenState extends ConsumerState<BlogListScreen> {
     setState(() {
       _isSearching = true;
     });
-    
-    debugPrint('Loading and highlighting post with deeplink: $deeplink');
-    
+
     try {
       final highlightedPost = await ref.read(blogRepositoryProvider).getBlogPostByDeeplink(deeplink);
       
       if (highlightedPost != null) {
-        debugPrint('Successfully found post: ${highlightedPost.id} - ${highlightedPost.title}');
-        
+
         setState(() {
           _blogPostToHighlight = highlightedPost;
           _hasScrolledToHighlighted = false;
         });
-        
-        // Set the selected blog post ID in the provider
+
         ref.read(selectedBlogPostIdProvider.notifier).state = highlightedPost.id;
-        
-        // Show a snackbar to confirm we found the post
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Found post: ${highlightedPost.title}'),
@@ -69,7 +64,6 @@ class _BlogListScreenState extends ConsumerState<BlogListScreen> {
           ),
         );
       } else {
-        debugPrint('No post found for deeplink: $deeplink');
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('No post found for: $deeplink'),
@@ -152,7 +146,7 @@ class _BlogListScreenState extends ConsumerState<BlogListScreen> {
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.white,
-                  Colors.blue.shade50,
+                  Colors.blue.shade100,
                 ],
               ),
             ),

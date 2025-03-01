@@ -22,6 +22,7 @@ class BlogDetailScreen extends StatelessWidget {
             stretch: true,
             backgroundColor: Theme.of(context).primaryColor,
             systemOverlayStyle: SystemUiOverlayStyle.light,
+            iconTheme: const IconThemeData(color: Colors.white),
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 blogPost.title,
@@ -72,20 +73,6 @@ class BlogDetailScreen extends StatelessWidget {
                 ],
               ),
             ),
-            actions: [
-              // Share button
-              IconButton(
-                icon: const Icon(Icons.share),
-                onPressed: () {
-                  // Share the blog post
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Sharing: ${blogPost.deeplink}'),
-                    ),
-                  );
-                },
-              ),
-            ],
           ),
           
           // Content
@@ -178,13 +165,6 @@ class BlogDetailScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        backgroundColor: Theme.of(context).primaryColor,
-        child: const Icon(Icons.arrow_back),
       ),
     );
   }
