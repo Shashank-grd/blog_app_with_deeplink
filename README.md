@@ -11,12 +11,6 @@ A Flutter application that displays blog posts from Firebase Cloud Firestore wit
 
 ## Getting Started
 
-### Prerequisites
-
-- Flutter SDK (3.0.0 or higher)
-- Firebase account
-- Android Studio / VS Code
-
 ### Installation
 
 1. Clone the repository
@@ -39,17 +33,6 @@ Create a collection named `blogPosts` with documents containing the following fi
 - `content`: Full content of the blog post
 - `deeplink`: Deep link for navigating directly to the blog post (format: `/blog/post-slug`)
 
-#### Sample Data
-
-The repository includes a sample data file (`sample_data.json`) and a script to upload it to Firestore. To use the sample data:
-
-1. Make sure your Firebase project is set up correctly
-2. Run the upload script:
-   ```
-   flutter run upload_sample_data.dart
-   ```
-
-This will populate your Firestore database with sample blog posts.
 
 ### Deep Linking Setup
 
@@ -58,35 +41,13 @@ This will populate your Firestore database with sample blog posts.
 Add the following to your `android/app/src/main/AndroidManifest.xml` file:
 
 ```xml
-<intent-filter>
-    <action android:name="android.intent.action.VIEW" />
-    <category android:name="android.intent.category.DEFAULT" />
-    <category android:name="android.intent.category.BROWSABLE" />
-    <data
-        android:scheme="https"
-        android:host="yourdomain.com"
-        android:pathPrefix="/blog" />
+<intent-filter android:autoVerify="true">
+   <action android:name="android.intent.action.VIEW" />
+   <category android:name="android.intent.category.DEFAULT" />
+   <category android:name="android.intent.category.BROWSABLE" />
+   <data android:scheme="http" android:host="example.com" />
+   <data android:scheme="https" />
 </intent-filter>
-```
-
-#### iOS
-
-Add the following to your `ios/Runner/Info.plist` file:
-
-```xml
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>com.yourdomain</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>blogapp</string>
-        </array>
-    </dict>
-</array>
 ```
 
 ## Usage
@@ -105,12 +66,6 @@ You can test deep links using the following commands:
 
 ```
 adb shell am start -a android.intent.action.VIEW -d "https://yourdomain.com/blog/post-slug"
-```
-
-#### iOS
-
-```
-xcrun simctl openurl booted "blogapp://blog/post-slug"
 ```
 
 ## Architecture
