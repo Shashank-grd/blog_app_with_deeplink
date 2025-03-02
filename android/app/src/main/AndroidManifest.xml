@@ -25,8 +25,9 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="https" android:host="zarity.example.com" />
-                <data android:scheme="http" android:host="zarity.example.com" />
+                <data android:scheme="https" android:host="zarity.example.com" android:pathPrefix="/post/" />
+                <data android:scheme="http" android:host="zarity.example.com" android:pathPrefix="/post/" />
+
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

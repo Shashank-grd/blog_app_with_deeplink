@@ -1,7 +1,21 @@
 # Blog App with Firebase and Deep Linking
 
 A Flutter application that displays blog posts from Firebase Cloud Firestore with deep linking functionality.
+A video demo of the App is Under Demo Directory.
 
+<p align="center">
+  <img src="https://github.com/Shashank-grd/blog_app_with_deeplink/blob/main/Demo/zarity_homescreen.png?raw=true" alt="example1" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/Shashank-grd/blog_app_with_deeplink/blob/main/Demo/zarity_upload_screen.png" alt="example2" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+</p>
+
+  <!-- Add space between rows -->
+<br><br>
+
+<p align="center">
+  <img src="https://github.com/Shashank-grd/blog_app_with_deeplink/blob/main/Demo/zarity_blog_detail.jpg" alt="example4" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/Shashank-grd/blog_app_with_deeplink/blob/main/Demo/zarity_blog_detail2.jpg" alt="example5" width="200" height="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
 ## Features
 
 - **Firebase Integration**: Fetches blog posts from Cloud Firestore
@@ -77,6 +91,3 @@ The app follows a clean architecture pattern:
 - **Provider**: State management using Riverpod
 - **UI**: Screens and widgets for displaying blog posts
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
